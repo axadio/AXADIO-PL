@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AXADIO.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Editor WidthRequest="300"
+                        Placeholder="input"
+                        x:Name="myEntry"/>
+                <ImageButton Source="runbutton.png"
+                             HeightRequest="32"
+                             WidthRequest="32"
+                             VerticalOptions="Start"
+                             HorizontalOptions="End"
+                             Clicked="OnCompilePressed"/>
+            </HorizontalStackLayout>
+            <Editor
+                x:Name="kodMaydoni"
+                HeightRequest="500"
+                VerticalOptions="Start"
+                Placeholder="kodni kiriting"
+                PlaceholderColor="Blue"
+                AutoSize="TextChanges" />
+
+            
+            <Label 
+                Text="Salom"
+                x:Name="myLabel" />
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
