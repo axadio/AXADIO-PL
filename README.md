@@ -147,3 +147,17 @@ faktorial ->son son1<- son: <1, 1><0, 1>
 --
 ```
 ## Standart holda 100 martagacha rekursiya chegaralangan.
+
+## 🔄 8. Ma'lumot turini almashtirish (Type Casting)
+
+Axadio tilida **qiymatning turini o‘zgartirish (casting)** `<- tur` sintaksisi orqali amalga oshiriladi.
+
+Bu usul minimal sintaksis bilan **xotira tejamkor va qat'iy nazoratli** tur almashtirish imkonini beradi.
+
+---
+
+### 🔹 Sintaksis
+
+```axadio
+yangiQiymat = eskiQiymat <- yangiTur -
+```
