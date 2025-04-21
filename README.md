@@ -172,3 +172,28 @@ chiqarish<xabar> -
 satr ism = kiritish<"Ismingiz: "> - 
 chiqarish<"Salom", ism> -
 ```
+## ⁉️ 10. Shart Operatori (Conditional Statements)
+
+Axadio tilida **shartki** operatori shartni tekshiradi va uning rost yoki yolg‘onligini aniqlaydi. Agar shart bajarilsa, tegishli tana bajariladi. Agar shart bajarilmasa, **yo‘qsa** operatori orqali aksi holat bajariladi.
+
+### Sintaksis:
+
+```axadio
+shartki shart -- tana -
+-- yo‘qsa shartki shart -- tana -
+-- yo‘qsa -- tana -
+```
+```axadio
+shartki 2 > 5
+--
+chiqarish<"2 5dan katta"> -
+--
+yo‘qsa shartki 2 > 3
+--
+chiqarish<"2 3dan katta"> -
+--
+yo‘qsa
+--
+chiqarish<"2 3 va 5dan kichik"> -
+--
+```
