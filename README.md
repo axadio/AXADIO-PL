@@ -117,4 +117,12 @@ funksiyaNomi(arg1, arg2) { return a; }
 
 ---
 
-Bular shu kungacha to‘plangan ma'lumotlar. Ertaga davom etamiz.
+## ✅ 6. Funksiyani chaqirish
+
+Axadio tilida funksiyani chaqirish sintaksisi aniq va tartibli:
+
+### 🔹 Sintaksis
+
+```axadio
+FunksiyaNomi <tur1 argument1, tur2 argument2>
+
