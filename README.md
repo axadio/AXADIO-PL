@@ -124,7 +124,7 @@ Axadio tilida funksiyani chaqirish sintaksisi aniq va tartibli:
 ### 🔹 Sintaksis
 
 ```axadio
-FunksiyaNomi <tur1 argument1, tur2 argument2>
+FunksiyaNomi <tur1 argument1, tur2 argument2> -
 ```
 
 ## 🔁 7. Ichma-ich chaqiruv (rekursiv funksiyalar)
@@ -143,6 +143,6 @@ FunksiyaNomi<argument><holat1, qaytish1><holat2, qaytish2>
 ```axadio
 faktorial<son><1, 1><0, 1>
 --
-  uzat son * faktorial<son - 1>
+  uzat son * faktorial<son - 1> -
 --
 ```
