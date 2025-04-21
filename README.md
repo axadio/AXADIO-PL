@@ -144,4 +144,5 @@ FunksiyaNomi<argument><holat1, qaytish1><holat2, qaytish2>
 faktorial<son><1, 1><0, 1>
 --
   uzat son * faktorial<son - 1>
+--
 ```
