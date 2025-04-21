@@ -161,3 +161,14 @@ Bu usul minimal sintaksis bilan **xotira tejamkor va qat'iy nazoratli** tur alma
 ```axadio
 yangiQiymat = eskiQiymat <- yangiTur -
 ```
+
+## 🖨️ 9. Kiritish va chiqarish
+Kiritish va chiqarish uchun funksiyalar **standart** kutubxonasi mavjud, va undan foydalanish uchun **ishlatimoqda:** kalit so’zi kerak bo’ladi.
+
+```axadio
+ishlatilmoqda: "standart" - 
+satr xabar = "Salom, Dunyo" - 
+chiqarish<xabar> - 
+satr ism = kiritish<"Ismingiz: "> - 
+chiqarish<"Salom", ism> -
+```
