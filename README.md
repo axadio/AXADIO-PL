@@ -117,4 +117,83 @@ funksiyaNomi(arg1, arg2) { return a; }
 
 ---
 
-Bular shu kungacha to‘plangan ma'lumotlar. Ertaga davom etamiz.
+## ✅ 6. Funksiyani chaqirish
+
+Axadio tilida funksiyani chaqirish sintaksisi aniq va tartibli:
+
+### 🔹 Sintaksis
+
+```axadio
+FunksiyaNomi <tur1 argument1, tur2 argument2> -
+```
+
+## 🔁 7. Ichma-ich chaqiruv (rekursiv funksiyalar)
+
+Axadio tilida **rekursiv funksiyalarni chaqirishda** maxsus sintaksis mavjud. Har bir chaqiruv **qaytish nuqtalari (base case)** bilan birga yoziladi.
+
+---
+
+### 🔹 Sintaksis
+
+```axadio
+FunksiyaNomi<argument><holat1, qaytish1><holat2, qaytish2>
+```
+
+### Misol
+```axadio
+faktorial ->son son1<- son: <1, 1><0, 1>
+--
+  uzat son * faktorial<son - 1> -
+--
+```
+## Standart holda 100 martagacha rekursiya chegaralangan.
+
+## 🔄 8. Ma'lumot turini almashtirish (Type Casting)
+
+Axadio tilida **qiymatning turini o‘zgartirish (casting)** `<- tur` sintaksisi orqali amalga oshiriladi.
+
+Bu usul minimal sintaksis bilan **xotira tejamkor va qat'iy nazoratli** tur almashtirish imkonini beradi.
+
+---
+
+### 🔹 Sintaksis
+
+```axadio
+yangiQiymat = eskiQiymat <- yangiTur -
+```
+
+## 🖨️ 9. Kiritish va chiqarish
+Kiritish va chiqarish uchun funksiyalar **standart** kutubxonasi mavjud, va undan foydalanish uchun **ishlatimoqda:** kalit so’zi kerak bo’ladi.
+
+```axadio
+ishlatilmoqda: "standart" - 
+satr xabar = "Salom, Dunyo" - 
+chiqarish<xabar> - 
+satr ism = kiritish<"Ismingiz: "> - 
+chiqarish<"Salom", ism> -
+```
+## ⁉️ 10. Shart Operatori (Conditional Statements)
+
+Axadio tilida **shartki** operatori shartni tekshiradi va uning rost yoki yolg‘onligini aniqlaydi. Agar shart bajarilsa, tegishli tana bajariladi. Agar shart bajarilmasa, **yo‘qsa** operatori orqali aksi holat bajariladi.
+
+### Sintaksis:
+
+```axadio
+shartki shart -- tana -
+-- yo‘qsa shartki shart -- tana -
+-- yo‘qsa -- tana -
+```
+```axadio
+shartki 2 > 5
+--
+chiqarish<"2 5dan katta"> -
+--
+yo‘qsa shartki 2 > 3
+--
+chiqarish<"2 3dan katta"> -
+--
+yo‘qsa
+--
+chiqarish<"2 3 va 5dan kichik"> -
+--
+```
