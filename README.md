@@ -1,4 +1,4 @@
-# Assalomu alkaykum!
+# Assalomu alaykum!
 ### ushbu repository Axadio tili haqida
 
 ## O'rnatish
