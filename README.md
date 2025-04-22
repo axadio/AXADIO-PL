@@ -50,16 +50,16 @@ Ko‘p qatorli izoh:
 
 ## 3. Qator yakunlari
 
-Har bir kod qatori **nuqta (.)** bilan emas, **tire (-)** bilan tugallanadi.
+Har bir kod qatori **nuqta (.)**  bilan tugallanadi.
 
 **Xato:**
 ```axadio
-son a = 5.
+son a = 5;
 ```
 
 **To‘g‘ri:**
 ```axadio
-son a = 5 -
+son a = 5 .
 ```
 
 ---
@@ -70,12 +70,12 @@ Axadio tili C# asosida yaratilgani sababli, o‘zgaruvchilar nomini `snake_case`
 
 **Yaxshi:**
 ```axadio
-son MeningSonim -
+son MeningSonim .
 ```
 
 **Muammoli:**
 ```axadio
-son mening_sonim -
+son mening_sonim .
 ```
 
 ---
@@ -95,7 +95,7 @@ son mening_sonim -
   **To‘g‘ri:**
   ```axadio
   funksiyaNomi -> arg1, arg2 <- qaytarishTipi --
-      tana
+      tana .
   --
   ```
 
@@ -105,8 +105,8 @@ son mening_sonim -
 **Yaxshi:**
 ```axadio
 funksiyaNomi -> arg1, arg2 <- son --
-    son a = 5 -
-    uzat a -
+    son a = 5 .
+    uzat a .
 --
 ```
 
@@ -124,7 +124,7 @@ Axadio tilida funksiyani chaqirish sintaksisi aniq va tartibli:
 ### 🔹 Sintaksis
 
 ```axadio
-FunksiyaNomi <tur1 argument1, tur2 argument2> -
+FunksiyaNomi <tur1 argument1, tur2 argument2> .
 ```
 
 ## 🔁 7. Ichma-ich chaqiruv (rekursiv funksiyalar)
@@ -143,7 +143,7 @@ FunksiyaNomi<argument><holat1, qaytish1><holat2, qaytish2>
 ```axadio
 faktorial ->son son1<- son: <1, 1><0, 1>
 --
-  uzat son * faktorial<son - 1> -
+  uzat son * faktorial<son - 1> .
 --
 ```
 ## Standart holda 100 martagacha rekursiya chegaralangan.
@@ -159,18 +159,18 @@ Bu usul minimal sintaksis bilan **xotira tejamkor va qat'iy nazoratli** tur alma
 ### 🔹 Sintaksis
 
 ```axadio
-yangiQiymat = eskiQiymat <- yangiTur -
+yangiQiymat = eskiQiymat <- yangiTur .
 ```
 
 ## 🖨️ 9. Kiritish va chiqarish
 Kiritish va chiqarish uchun funksiyalar **standart** kutubxonasi mavjud, va undan foydalanish uchun **ishlatimoqda:** kalit so’zi kerak bo’ladi.
 
 ```axadio
-ishlatilmoqda: "standart" - 
-satr xabar = "Salom, Dunyo" - 
-chiqarish<xabar> - 
-satr ism = kiritish<"Ismingiz: "> - 
-chiqarish<"Salom", ism> -
+ishlatilmoqda: "standart" . 
+satr xabar = "Salom, Dunyo" . 
+chiqarish<xabar> . 
+satr ism = kiritish<"Ismingiz: "> .
+chiqarish<"Salom", ism> .
 ```
 ## ⁉️ 10. Shart Operatori (Conditional Statements)
 
@@ -179,22 +179,22 @@ Axadio tilida **shartki** operatori shartni tekshiradi va uning rost yoki yolg�
 ### Sintaksis:
 
 ```axadio
-shartki shart -- tana -
--- yo‘qsa shartki shart -- tana -
--- yo‘qsa -- tana -
+shartki shart -- tana .
+-- yo‘qsa shartki shart -- tana .
+-- yo‘qsa -- tana .
 ```
 ```axadio
 shartki 2 > 5
 --
-chiqarish<"2 5dan katta"> -
+chiqarish<"2 5dan katta"> .
 --
 yo‘qsa shartki 2 > 3
 --
-chiqarish<"2 3dan katta"> -
+chiqarish<"2 3dan katta"> .
 --
 yo‘qsa
 --
-chiqarish<"2 3 va 5dan kichik"> -
+chiqarish<"2 3 va 5dan kichik"> .
 --
 ```
 
@@ -203,9 +203,9 @@ chiqarish<"2 3 va 5dan kichik"> -
 Axadio tilida qiymatga arifmetik amallarni sodda tarzda bajarish uchun quyidagi sintaksis ishlatiladi:
 
 ```axadio
-son =+ 1  (( qiymatga 1 qo‘shish ))
-son =- 2  (( qiymatdan 2 ayirish ))
-son =* 3  (( qiymatni 3 ga ko‘paytirish ))
-son =/ 4  (( qiymatni 4 ga bo‘lish ))
+son =+ 1  (( qiymatga 1 qo‘shish )) .
+son =- 2  (( qiymatdan 2 ayirish )) .
+son =* 3  (( qiymatni 3 ga ko‘paytirish )) .
+son =/ 4  (( qiymatni 4 ga bo‘lish )) .
 
 
