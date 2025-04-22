@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AXADIO.MainPage">
+             x:Class="AXADIO.Pages.MainPage">
 
     <ScrollView>
         <VerticalStackLayout>
             <HorizontalStackLayout>
                 <Editor WidthRequest="300"
-                        Placeholder="input"
+                        PlaceholderColor="Gray"
+                        Placeholder="kiritish maydoni"
                         x:Name="myEntry"/>
                 <ImageButton Source="runbutton.png"
                              HeightRequest="32"
@@ -21,10 +22,9 @@
                 HeightRequest="500"
                 VerticalOptions="Start"
                 Placeholder="kodni kiriting"
-                PlaceholderColor="Blue"
+                PlaceholderColor="Gray"
                 AutoSize="TextChanges" />
 
-            
             <Label 
                 Text="Salom"
                 x:Name="myLabel" />
