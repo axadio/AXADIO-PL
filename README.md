@@ -197,3 +197,14 @@ yo‘qsa
 chiqarish<"2 3 va 5dan kichik"> -
 --
 ```
+
+### Arifmetik qisqa yozuvlar
+
+Axadio tilida qiymatga arifmetik amallarni qo‘shish yoki olib tashlash uchun quyidagi ifodalar ishlatiladi. Bu usul an'anaviy `+=`, `-=`, `*=`, `/=` sintaksislariga yaqin, lekin soddalashtirilgan shaklda:
+
+```axadio
+son =+ 1  // qiymatga 1 qo‘shish
+son =- 2  // qiymatdan 2 ayirish
+son =* 3  // qiymatni 3 ga ko‘paytirish
+son =/ 4  // qiymatni 4 ga bo‘lish
+
