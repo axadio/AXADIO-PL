@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AXADIO.Pages.Settings"
-             Title="Settings">
+             Title="Sozlamalar">
 
     <VerticalStackLayout Padding="20">
-        <Label Text="Sozlamalar sahifasi" FontSize="24" />
+        <Label Text="🌙 Qorong‘i rejim" FontSize="18" />
+        <Switch x:Name="DarkModeSwitch"
+            Toggled="DarkModeSwitch_Toggled" />
     </VerticalStackLayout>
+
 
 </ContentPage>

@@ -8,11 +8,11 @@
     Title="AXADIO">
 
     <ShellContent
-        Title="Home"
+        Title="Asosiy"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
     <ShellContent
-        Title="Settings"
+        Title="Sozlamalar"
         ContentTemplate="{DataTemplate local:Settings}"
         Route="SettingsPage" />
 

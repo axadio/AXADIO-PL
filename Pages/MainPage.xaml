@@ -1,35 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AXADIO.Pages.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <HorizontalStackLayout>
-                <Editor WidthRequest="300"
-                        PlaceholderColor="Gray"
-                        Placeholder="kiritish maydoni"
-                        x:Name="myEntry"/>
-                <ImageButton Source="runbutton.png"
-                             HeightRequest="32"
-                             WidthRequest="32"
-                             VerticalOptions="Start"
-                             HorizontalOptions="End"
-                             Clicked="OnCompilePressed"/>
-            </HorizontalStackLayout>
-            <Editor
+    <Grid RowSpacing="10" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Entry -->
+            <RowDefinition Height="Auto" />
+            <!-- Button -->
+            <RowDefinition Height="2*" />
+            <!-- Kod maydoni -->
+            <RowDefinition Height="4*" />
+            <!-- Natija editori -->
+        </Grid.RowDefinitions>
+
+        <Editor Grid.Row="0"
+                x:Name="myEntry"
+                Placeholder="Kiritish maydoni"
+                HeightRequest="50"
+                WidthRequest="333"
+                HorizontalOptions="Start"/>
+
+        <ImageButton Grid.Row="1"
+                     Source="runbutton.png"
+                     HeightRequest="32"
+                     WidthRequest="32"
+                     Clicked="OnCompilePressed"
+                     HorizontalOptions="End"/>
+
+        <Editor Grid.Row="2"
                 x:Name="kodMaydoni"
-                HeightRequest="500"
-                VerticalOptions="Start"
-                Placeholder="kodni kiriting"
-                PlaceholderColor="Gray"
+                Placeholder="Kod kiriting"
+                CharacterSpacing="1"
                 AutoSize="TextChanges" />
 
-            <Label 
-                Text="Salom"
-                x:Name="myLabel" />
-        </VerticalStackLayout>
-
-    </ScrollView>
+        <Editor Grid.Row="3"
+                x:Name="myLabel"
+                Placeholder="Natija shu yerda"
+                IsReadOnly="True"
+                TextColor="Black"
+                BackgroundColor="Gray"
+                AutoSize="TextChanges"
+                HeightRequest="200"
+                WidthRequest="500"
+                HorizontalOptions="Start"/>
+    </Grid>
 
 </ContentPage>
