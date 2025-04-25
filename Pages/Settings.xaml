@@ -5,10 +5,10 @@
              Title="Sozlamalar">
 
     <VerticalStackLayout Padding="20">
-        <Label Text="🌙 Qorong‘i rejim" FontSize="18" />
-        <Switch x:Name="DarkModeSwitch"
-            Toggled="DarkModeSwitch_Toggled" />
+        <HorizontalStackLayout>
+            <Label Text="🌙 Qorong‘i rejim" FontSize="18" VerticalOptions="Center" />
+            <Switch x:Name="DarkModeSwitch" Toggled="DarkModeSwitch_Toggled" VerticalOptions="Center" />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
-
 
 </ContentPage>
