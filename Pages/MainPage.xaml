@@ -1,40 +1,72 @@
-﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AXADIO.Pages.MainPage">
 
     <Grid RowSpacing="10" Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <!-- Entry -->
+            <!-- Yangi qator - Faylni ochish, saqlash va ishga tushirish tugmalari -->
             <RowDefinition Height="Auto" />
-            <!-- Button -->
-            <RowDefinition Height="2*" />
-            <!-- Kod maydoni -->
-            <RowDefinition Height="4*" />
-            <!-- Natija editori -->
+            <!-- Kodni kiritish maydoni -->
+            <RowDefinition Height="1*" />
+            <!-- Tugmalar -->
+            <RowDefinition Height="Auto" />
+            <!-- Kodni ko'rsatish maydoni  -->
+            <RowDefinition Height="0.25*" />
+            <!-- Natija ko'rsatiladigan maydon (chorak qismi) -->
         </Grid.RowDefinitions>
 
-        <Editor Grid.Row="0"
-                x:Name="myEntry"
-                Placeholder="Kiritish maydoni"
-                HeightRequest="50"
-                WidthRequest="333"
-                HorizontalOptions="Start"/>
+        <!-- Faylni ochish va saqlash tugmalari -->
+        <Grid Grid.Row="0" ColumnSpacing="10" Padding="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-        <ImageButton Grid.Row="1"
-                     Source="runbutton.png"
-                     HeightRequest="32"
-                     WidthRequest="32"
-                     Clicked="OnCompilePressed"
-                     HorizontalOptions="End"/>
+            <Button Grid.Column="0" 
+                    Text="Fayl ochish" 
+                    Clicked="OnOpenFilePressed" 
+                    BackgroundColor="DarkBlue" 
+                    TextColor="Yellow"
+                    BorderColor="Black" 
+                    BorderWidth="2" 
+                    CornerRadius="5"
+                    HorizontalOptions="Start"/>
 
+            <Button Grid.Column="1" 
+                    Text="Saqlash" 
+                    Clicked="OnSaveToFilePressed" 
+                    BackgroundColor="DarkGreen" 
+                    TextColor="Yellow"
+                    BorderColor="Black" 
+                    BorderWidth="2" 
+                    CornerRadius="5"
+                    HorizontalOptions="Start"/>
+
+            <Button Grid.Column="2" 
+                        Text="Ishga tushirish" 
+                        Clicked="OnCompilePressed" 
+                        BackgroundColor="DarkRed" 
+                        TextColor="Yellow"
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        CornerRadius="5"
+                        HorizontalOptions="Start"/>
+
+        </Grid>
+
+        <!-- Kodni kiritish maydoni -->
         <Editor Grid.Row="2"
                 x:Name="kodMaydoni"
                 Placeholder="Kod kiriting"
                 CharacterSpacing="1"
-                AutoSize="TextChanges" />
+                AutoSize="TextChanges"
+                IsSpellCheckEnabled="False"
+                VerticalOptions="FillAndExpand" />
 
-        <Editor Grid.Row="3"
+        <!-- Kodni natijasini ko'rsatish maydoni -->
+        <Editor Grid.Row="4"
                 x:Name="myLabel"
                 Placeholder="Natija shu yerda"
                 IsReadOnly="True"
@@ -43,7 +75,20 @@
                 AutoSize="TextChanges"
                 HeightRequest="200"
                 WidthRequest="500"
-                HorizontalOptions="Start"/>
+                HorizontalOptions="Start"
+                VerticalOptions="EndAndExpand" />
+
+        <!-- Papka yoki faylni ko'rsatish -->
+        <ListView Grid.Row="3"
+                  x:Name="folderItemsListView"
+                  ItemsSource="{Binding FolderItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 
 </ContentPage>
