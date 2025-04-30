@@ -1,94 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AXADIO.Pages.MainPage">
 
-    <Grid RowSpacing="10" Padding="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <!-- Yangi qator - Faylni ochish, saqlash va ishga tushirish tugmalari -->
-            <RowDefinition Height="Auto" />
-            <!-- Kodni kiritish maydoni -->
-            <RowDefinition Height="1*" />
-            <!-- Tugmalar -->
-            <RowDefinition Height="Auto" />
-            <!-- Kodni ko'rsatish maydoni  -->
-            <RowDefinition Height="0.25*" />
-            <!-- Natija ko'rsatiladigan maydon (chorak qismi) -->
-        </Grid.RowDefinitions>
+    <!-- Tashqi 2-ustunli Grid -->
+    <Grid ColumnSpacing="10" Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
 
-        <!-- Faylni ochish va saqlash tugmalari -->
-        <Grid Grid.Row="0" ColumnSpacing="10" Padding="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <!-- Chap ustun (0): ScrollView -->
+        <Grid RowSpacing="10" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"
+                        x:Name="menuButton"
+                        VerticalOptions="Start"
+                        Text="Menyu📑"
+                        Background="SlateGray" />
+                <Button Grid.Row="1"
+                        x:Name="newProject➕"
+                        VerticalOptions="Start"
+                        Text="Yangi loyiha"
+                        Background="Moccasin" />
+                <Button Grid.Row="2"
+                        x:Name="saveProject📁"
+                        VerticalOptions="Start"
+                        Text="Loyihani saqlash"
+                        Background="LightBlue" />
+            </Grid>
+        </Grid>
 
-            <Button Grid.Column="0" 
-                    Text="Fayl ochish" 
-                    Clicked="OnOpenFilePressed" 
-                    BackgroundColor="DarkBlue" 
-                    TextColor="Yellow"
-                    BorderColor="Black" 
-                    BorderWidth="2" 
-                    CornerRadius="5"
-                    HorizontalOptions="Start"/>
+        <!-- O'ng ustun (1): Sizning asl Grid -->
+        <Grid Grid.Column="1" RowSpacing="10" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
 
-            <Button Grid.Column="1" 
-                    Text="Saqlash" 
-                    Clicked="OnSaveToFilePressed" 
-                    BackgroundColor="DarkGreen" 
-                    TextColor="Yellow"
-                    BorderColor="Black" 
-                    BorderWidth="2" 
-                    CornerRadius="5"
-                    HorizontalOptions="Start"/>
+            <!-- Row 0: Fayl tugmalari -->
+            <Grid Grid.Row="0" ColumnSpacing="10" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="2" 
+                <Button Grid.Column="0" 
+                        Text="Fayl ochish" 
+                        Clicked="OnOpenFilePressed"
+                        BackgroundColor="DarkBlue" 
+                        TextColor="Yellow"
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        CornerRadius="5"
+                        VerticalOptions="Start" />
+
+                <Button Grid.Column="1" 
+                        Text="Saqlash" 
+                        Clicked="OnSaveToFilePressed"
+                        BackgroundColor="DarkGreen" 
+                        TextColor="Yellow"
+                        BorderColor="Black" 
+                        BorderWidth="2" 
+                        CornerRadius="5"
+                        VerticalOptions="Start"/>
+
+                <Button Grid.Column="2" 
                         Text="Ishga tushirish" 
-                        Clicked="OnCompilePressed" 
+                        Clicked="OnCompilePressed"
                         BackgroundColor="DarkRed" 
                         TextColor="Yellow"
                         BorderColor="Black" 
                         BorderWidth="2" 
                         CornerRadius="5"
-                        HorizontalOptions="Start"/>
+                        VerticalOptions="Start"/>
+            </Grid>
 
+            <!-- Row 2: Kod kiritish -->
+            <Editor Grid.Row="2"
+                    x:Name="kodMaydoni"
+                    Placeholder="Kod yozish shu yerga"
+                    CharacterSpacing="1"
+                    AutoSize="TextChanges"
+                    IsSpellCheckEnabled="False"
+                    VerticalOptions="Fill"
+                    HorizontalOptions="Fill" />
+
+            <!-- Row 3: Natija maydoni -->
+            <Grid Grid.Row="3" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <Entry Grid.Column="0"
+                       x:Name="myEntry"
+                       Placeholder="Kiritish maydoni"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Start" />
+
+                <ScrollView Grid.Column="1"
+                            VerticalOptions="Fill"
+                            HorizontalOptions="Fill">
+                    <Label x:Name="myLabel"
+                           Text="Natija shu yerda"
+                           TextColor="Black"
+                           BackgroundColor="DarkGray"
+                           LineBreakMode="WordWrap" />
+                </ScrollView>
+            </Grid>
         </Grid>
-
-        <!-- Kodni kiritish maydoni -->
-        <Editor Grid.Row="2"
-                x:Name="kodMaydoni"
-                Placeholder="Kod kiriting"
-                CharacterSpacing="1"
-                AutoSize="TextChanges"
-                IsSpellCheckEnabled="False"
-                VerticalOptions="FillAndExpand" />
-
-        <!-- Kodni natijasini ko'rsatish maydoni -->
-        <Editor Grid.Row="4"
-                x:Name="myLabel"
-                Placeholder="Natija shu yerda"
-                IsReadOnly="True"
-                TextColor="Black"
-                BackgroundColor="Gray"
-                AutoSize="TextChanges"
-                HeightRequest="200"
-                WidthRequest="500"
-                HorizontalOptions="Start"
-                VerticalOptions="EndAndExpand" />
-
-        <!-- Papka yoki faylni ko'rsatish -->
-        <ListView Grid.Row="3"
-                  x:Name="folderItemsListView"
-                  ItemsSource="{Binding FolderItems}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Name}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
     </Grid>
-
 </ContentPage>
+
