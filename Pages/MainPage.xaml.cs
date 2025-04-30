@@ -1,6 +1,8 @@
+
 using Microsoft.Maui.Controls;
 using System.IO;
 using System;
+using System.Threading;
 using AXADIO.Interpreter;
 using Microsoft.Maui.Storage;
 using System.Collections.ObjectModel;
@@ -21,7 +23,7 @@ namespace AXADIO.Pages
         }
 
         // Kodni ishga tushirish
-        public void OnCompilePressed(object sender, EventArgs e)
+        public async void OnCompilePressed(object sender, EventArgs e)
         {
             string compildecode = kodMaydoni.Text ?? "";
             string[] qatorlar = compildecode.Split('\n');
@@ -29,17 +31,25 @@ namespace AXADIO.Pages
             var checker = new ExpectingCode();
             checker.CheckCode(qatorlar);
 
+            myLabel.TextColor = Colors.Black;
+            myLabel.Text = "Dastur ishga tushirilmoqda...";
+
+            await Task.Delay(500); // Asenkron kutish (UI bloklanmaydi)
+
             if (checker.EveryThingIsClear)
             {
                 InterpreterObject stringParser = new InterpreterObject();
                 string natija = stringParser.Compile(qatorlar);
                 myLabel.Text = natija;
+                myLabel.TextColor = Colors.Black;
             }
             else
             {
+                myLabel.TextColor = Colors.Red;
                 myLabel.Text = "Xatoliklar:\n" + string.Join("\n", checker.Errors);
             }
         }
+
 
         // Fayl yoki papka ochish
         public async void OnOpenFilePressed(object sender, EventArgs e)
